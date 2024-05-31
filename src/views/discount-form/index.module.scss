@@ -1,0 +1,34 @@
+.discountForm {
+  width: Hug (1360px) px;
+  height: Hug (486px) px;
+  top: 1416px;
+  left: 40px;
+  padding: 32px 32px 0px 32px;
+  gap: 24px;
+  border-radius: var(--radiusbig);
+  opacity: 0px;
+  // background-image: url(../../assets/discountFormImg.png);
+  background-image: url(../../assets/discountFormImg.png),
+    linear-gradient(80.46deg, #87933d -0.68%, #55610b 66.66%);
+}
+.form {
+  width: Fill (516px) px;
+  height: Hug (206px) px;
+  gap: 16px;
+  opacity: 0px;
+  display: grid;
+  justify-items: end;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 20px 20px;
+}
+.h1 {
+  font-family: Montserrat;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 70.4px;
+  text-align: center;
+  width: 1296px;
+  height: 70px;
+  gap: 0px;
+  opacity: 0px;
+}
