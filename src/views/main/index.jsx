@@ -33,6 +33,7 @@ export const Main = () => {
     <>
       {/* <Link to="products/2"> go see product </Link> */}
       <SiteHeader />
+      <Disount />
       <div className={styles.sales}>
         {saleItems.map(({ price, discont_price, description, image, id }) => (
           <CardItem
@@ -46,7 +47,6 @@ export const Main = () => {
           />
         ))}
       </div>
-      <Disount />
     </>
   );
 };

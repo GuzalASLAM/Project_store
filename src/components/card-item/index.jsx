@@ -12,11 +12,10 @@ export const CardItem = ({
 }) => {
   return (
     <div>
-      <h1>Sale</h1>
+      <h1 className={styles.sale}>Sale</h1>
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <div className={styles.discount}>{discontPercent}%</div>
-
           <img src={BASE_URL + image} alt="card" className={styles.cardImage} />
           <HeartIcon className={styles.heart} />
           <CartIcon className={styles.cart} />

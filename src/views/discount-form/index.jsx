@@ -1,18 +1,12 @@
 import React from "react";
 import styles from "./index.module.scss";
-
-// import discountFormImg from "../../assets/discountFormImg.png";
+import { useForm } from "react-hook-form";
 
 export const Disount = () => {
-  // console.log(discountFormImg);
+  const {} = useForm();
+
   return (
-    <div
-      className={styles.discountForm}
-      // style={{
-      //   backgroundImage: `url(${discountFormImg}),linear-gradient(80.46deg, #87933d -0.68%, #55610b 66.66%)`,
-      // }}
-    >
-      {/* <img src={discountFormImg} alt="form" /> */}
+    <div className={styles.discountForm}>
       <h1>5% off on the firs order</h1>
       <form className={styles.form}>
         <input placeholder="Name" />
