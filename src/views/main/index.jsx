@@ -34,6 +34,7 @@ export const Main = () => {
       {/* <Link to="products/2"> go see product </Link> */}
       <SiteHeader />
       <Disount />
+      <h2>Sale</h2>
       <div className={styles.sales}>
         {saleItems.map(({ price, discont_price, description, image, id }) => (
           <CardItem

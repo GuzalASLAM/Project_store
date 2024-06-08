@@ -1,32 +1,52 @@
 .discountForm {
-  width: 1360px;
-  height: 486px;
-  top: 1416px;
-  left: 40px;
-  padding: 80px 40px 108px;
-  gap: 24px;
+  padding: 32px;
   border-radius: 20px;
   margin: 40px;
 
   background-image: url(../../assets/discountFormImg.png),
     linear-gradient(80.46deg, #87933d -0.68%, #55610b 66.66%);
+  background-repeat: no-repeat;
+  background-position: bottom left;
 }
+
 .discountFormName {
   color: #fff;
   font-size: 64px;
   font-weight: 700;
   line-height: 70.4px;
-  padding: 32px 32px 24px;
+  padding-bottom: 32px;
   text-align: center;
 }
 .form {
-  width: 516px;
+  max-width: 50%;
   background-color: #339933 98.96%;
-  height: 206px;
-  gap: 16px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
 
-  display: grid;
-  justify-items: end;
-  // grid-template-columns: 1fr;
-  // grid-template-rows: 20px 20px;
+.form-element {
+  margin-bottom: 16px;
+  padding: 16px 32px;
+  border-radius: 6px;
+  outline: none;
+}
+
+.form > input {
+  @extend .form-element;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.form > input::placeholder {
+  color: #fff;
+}
+
+.form > button[type="submit"] {
+  @extend .form-element;
+  background-color: #fff;
+  color: #2d2d2d;
+  border: none;
+  cursor: pointer;
 }
