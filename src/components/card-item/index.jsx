@@ -1,6 +1,6 @@
 import React from "react";
 import { HeartIcon, CartIcon } from "../../assets/icons";
-import styles from "./index.module.scss";
+import stayles from "./index.module.scss";
 import { BASE_URL } from "../../constants";
 
 export const CardItem = ({
@@ -12,19 +12,23 @@ export const CardItem = ({
 }) => {
   return (
     <div>
-      <h1 className={styles.sale}>Sale</h1>
-      <div className={styles.wrapper}>
-        <div className={styles.header}>
-          <div className={styles.discount}>{discontPercent}%</div>
-          <img src={BASE_URL + image} alt="card" className={styles.cardImage} />
-          <HeartIcon className={styles.heart} />
-          <CartIcon className={styles.cart} />
+      <div className={stayles.wrapper}>
+        <h2 className={stayles.saleName}>Sale</h2>
+        <div className={stayles.header}>
+          <div className={stayles.discount}>{discontPercent}%</div>
+          <img
+            src={BASE_URL + image}
+            alt="card"
+            className={stayles.cardImage}
+          />
+          <HeartIcon className={stayles.heart} />
+          <CartIcon className={stayles.cart} />
         </div>
-        <div className={styles.info}>
-          <div className={styles.description}>{description}</div>
-          <div className={styles.prices}>
-            <div className={styles.newPrice}>{discont}</div>
-            <div className={styles.oldPrice}>{price}</div>
+        <div className={stayles.info}>
+          <div className={stayles.description}>{description}</div>
+          <div className={stayles.prices}>
+            <div className={stayles.newPrice}>{discont}</div>
+            <div className={stayles.oldPrice}>{price}</div>
           </div>
         </div>
       </div>

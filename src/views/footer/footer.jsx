@@ -1,15 +1,15 @@
 import React from "react";
 import { Instagram, Whatsapp } from "../../assets/icons";
-// import map from "../../assets/map.png";
+
 import styles from "./index.module.scss";
 import { Map } from "../map";
 
 export const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <h1>Contact</h1>
+    <footer className={styles.footerWraper}>
+      <h2 className={styles.footerHeadarName}>Contact</h2>
       <div className={styles.infoCard}>
-        <div className={styles.cards}>
+        <div className={styles.contack_cards}>
           <span>
             PHONE <a href="+49 999 999 99 99"></a>
           </span>
@@ -18,7 +18,7 @@ export const Footer = () => {
             <Instagram />
             <Whatsapp />
           </div>
-          <div className={styles.cards2}>
+          <div className={styles.contack_cards}>
             <span>Address</span>
             <p>Address Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland</p>
           </div>

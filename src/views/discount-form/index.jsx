@@ -7,7 +7,7 @@ export const Disount = () => {
 
   return (
     <div className={styles.discountForm}>
-      <h1>5% off on the firs order</h1>
+      <h2 className={styles.discountFormName}>5% off on the firs order</h2>
       <form className={styles.form}>
         <input placeholder="Name" />
         <input placeholder="Phone number" />
