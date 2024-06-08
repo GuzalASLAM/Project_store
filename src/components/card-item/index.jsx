@@ -13,7 +13,6 @@ export const CardItem = ({
   return (
     <div>
       <div className={stayles.wrapper}>
-        <h2 className={stayles.saleName}>Sale</h2>
         <div className={stayles.header}>
           <div className={stayles.discount}>{discontPercent}%</div>
           <img
