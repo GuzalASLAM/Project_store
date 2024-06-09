@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import stayles from "./index.module.scss";
+import { CardItem } from "../../components/card-item";
+import { getDiscountPercent } from "../../utils/getDiscountPercent";
+import { fetchAllItems } from "../../store/asycnc-actions";
+import { getAllItems } from "../../store/selectors";
+import { useDispatch, useSelector } from "react-redux";
 
 export const AllProducts = () => {
+  const dispatch = useDispatch();
+  const allProducts = useSelector(getAllItems);
+
+  useEffect(() => {
+    dispatch(fetchAllItems());
+  }, [dispatch]);
+
   return (
     <div>
       <div className={stayles.breadCrams}>
@@ -33,6 +45,17 @@ export const AllProducts = () => {
         <option value={"price:high-low"}>price: high-low</option>
         <option value={"price:low-high"}>price: low_high</option>
       </select>
+      {allProducts.map(({ price, discont_price, description, image, id }) => (
+        <CardItem
+          key={id}
+          price={price}
+          discont={discont_price}
+          disconPercent={getDiscountPercent(price, discont_price)}
+          description={description}
+          image={image}
+          id={id}
+        />
+      ))}
     </div>
   );
 };

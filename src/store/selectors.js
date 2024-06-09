@@ -1,6 +1,7 @@
 import { getDiscountPercent } from "../utils/getDiscountPercent";
 
 export const getAllItems = (state) => state.shop.items;
+export const getAllCategories = (state) => state.shop.categories;
 export const getIsLoading = (state) => state.shop.isLoading;
 
 export const getError = (state) => state.shop.error;

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllItems } from "./asycnc-actions";
+import { fetchAllItems, fetchAllCategories } from "./asycnc-actions";
 
 const initialState = {
   category: null,
@@ -7,6 +7,7 @@ const initialState = {
   isLoading: false,
   cart: [],
   error: null,
+  categories: [],
 };
 
 const shopSlice = createSlice({
@@ -24,14 +25,27 @@ const shopSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getAllItems.pending, (state) => {
+    builder.addCase(fetchAllItems.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(getAllItems.fulfilled, (state, { payload }) => {
+    builder.addCase(fetchAllItems.fulfilled, (state, { payload }) => {
       state.isLoading = false;
       state.items = payload;
     });
-    builder.addCase(getAllItems.rejected, (state, action) => {
+    builder.addCase(fetchAllItems.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.error.message;
+    });
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchAllCategories.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(fetchAllCategories.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.categories = payload;
+    });
+    builder.addCase(fetchAllCategories.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.error.message;
     });

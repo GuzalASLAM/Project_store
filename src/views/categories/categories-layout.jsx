@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BASE_URL } from "../../constants";
 import stayles from "./index.module.scss";
+import { useDispatch, useSelector } from "react-redux";
 // import { Link } from "react-router-dom";
+import { fetchAllCategories } from "../../store/asycnc-actions";
+import { getAllCategories } from "../../store/selectors";
+// import { getIsLoading, getError } from "../../store/selectors";
 
 export const CategoriesLayout = ({ image, id, title }) => {
+  //-----kogda ispolzavolna dispatch vixodila kucha oshibok----
+
+  const dispatch = useDispatch();
+  const categories = useSelector(getAllCategories);
+  useEffect(() => {
+    dispatch(fetchAllCategories());
+  }, [dispatch]);
+
+  const filtredCategories = categories.filter(({ index }) => index < 5);
+
   return (
     <div>
       <div className={stayles.categories_breadCrambs}>
@@ -20,9 +34,6 @@ export const CategoriesLayout = ({ image, id, title }) => {
         <div className={stayles.id}>{id}</div>
         <div className={stayles.title}>{title}</div>
       </div>
-      {/* <Link to="/categories/1">category1</Link>
-      <Link to="/categories/2">category2</Link>
-      <Link to="/categories/3">category3</Link> */}
     </div>
   );
 };

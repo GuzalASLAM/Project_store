@@ -9,9 +9,10 @@ import {
   getIsLoading,
   getError,
 } from "../../store/selectors";
-import { getAllItems } from "../../store/asycnc-actions";
-import { Link } from "react-router-dom";
+import { fetchAllItems, fetchAllCategories } from "../../store/asycnc-actions";
 import { Disount } from "../discount-form";
+import { Categories } from "../categories";
+import { AllSales } from "../all-sales";
 
 export const Main = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,8 @@ export const Main = () => {
   const error = useSelector(getError);
 
   useEffect(() => {
-    dispatch(getAllItems());
+    dispatch(fetchAllItems());
+    dispatch(fetchAllCategories());
   }, [dispatch]);
 
   if (error) {
@@ -31,10 +33,11 @@ export const Main = () => {
     <div>LOADING...</div>
   ) : (
     <>
-      {/* <Link to="products/2"> go see product </Link> */}
       <SiteHeader />
+      <Categories />
       <Disount />
-      <h2>Sale</h2>
+      <AllSales />
+      {/* <h2>Sale</h2> */}
       <div className={styles.sales}>
         {saleItems.map(({ price, discont_price, description, image, id }) => (
           <CardItem
