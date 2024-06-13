@@ -12,7 +12,7 @@ import {
 import { fetchAllItems, fetchAllCategories } from "../../store/asycnc-actions";
 import { Disount } from "../discount-form";
 import { Categories } from "../categories";
-import { AllSales } from "../all-sales";
+// import { AllSales } from "../all-sales";
 
 export const Main = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export const Main = () => {
 
   useEffect(() => {
     dispatch(fetchAllItems());
-    dispatch(fetchAllCategories());
+    // dispatch(fetchAllCategories());
   }, [dispatch]);
 
   if (error) {
@@ -34,10 +34,10 @@ export const Main = () => {
   ) : (
     <>
       <SiteHeader />
-      <Categories />
+      <Categories elementsCount={3} />
       <Disount />
-      <AllSales />
-      {/* <h2>Sale</h2> */}
+      {/* <AllSales /> */}
+      <h2>Sale</h2>
       <div className={styles.sales}>
         {saleItems.map(({ price, discont_price, description, image, id }) => (
           <CardItem

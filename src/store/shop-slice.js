@@ -37,19 +37,19 @@ const shopSlice = createSlice({
       state.error = action.error.message;
     });
   },
-  extraReducers: (builder) => {
-    builder.addCase(fetchAllCategories.pending, (state) => {
-      state.isLoading = true;
-    });
-    builder.addCase(fetchAllCategories.fulfilled, (state, { payload }) => {
-      state.isLoading = false;
-      state.categories = payload;
-    });
-    builder.addCase(fetchAllCategories.rejected, (state, action) => {
-      state.isLoading = false;
-      state.error = action.error.message;
-    });
-  },
+  // extraReducers: (builder) => {
+  //   builder.addCase(fetchAllCategories.pending, (state) => {
+  //     state.isLoading = true;
+  //   });
+  //   builder.addCase(fetchAllCategories.fulfilled, (state, { payload }) => {
+  //     state.isLoading = false;
+  //     state.categories = payload;
+  //   });
+  //   builder.addCase(fetchAllCategories.rejected, (state, action) => {
+  //     state.isLoading = false;
+  //     state.error = action.error.message;
+  //   });
+  // },
 });
 
 export const { setItems, setCategory, setIsLoading } = shopSlice.actions;

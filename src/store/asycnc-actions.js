@@ -16,16 +16,16 @@ export const fetchAllItems = createAsyncThunk(
     }
   }
 );
-export const fetchAllCategories = createAsyncThunk(
-  "shop/fetchAllCategories",
-  async (_, thunkApi) => {
-    try {
-      const rawData = await fetch(`${BASE_URL}/categories/all`);
-      const data = await rawData.json();
+// export const fetchAllCategories = createAsyncThunk(
+//   "shop/fetchAllCategories",
+//   async (_, thunkApi) => {
+//     try {
+//       const rawData = await fetch(`${BASE_URL}/categories/all`);
+//       const data = await rawData.json();
 
-      return thunkApi.fulfillWithValue(data);
-    } catch (err) {
-      return thunkApi.rejectWithValue(err);
-    }
-  }
-);
+//       return thunkApi.fulfillWithValue(data);
+//     } catch (err) {
+//       return thunkApi.rejectWithValue(err);
+//     }
+//   }
+// );

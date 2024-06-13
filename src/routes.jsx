@@ -13,7 +13,7 @@ export const RootRoutes = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Main />} />
-        <Route path="categories/*" element={<Categories />} />
+        <Route path="categories/*" element={<Categories elementsCount={5} />} />
         <Route path="all-sales" element={<AllSales />} />
         <Route path="products/:itemId" element={<Product />} />
         {/* TODO: роут для лайкнутых товаров (самостоятельно) */}
